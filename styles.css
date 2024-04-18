@@ -91,11 +91,16 @@ body, html {
 
 .page-container {
     height: calc(100vh - 5rem);
-    padding: 0 2rem;
+    padding: 0 5rem;
+    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.page-container#about p {
+    max-width: 800px;
 }
 
 .page-container#index {
