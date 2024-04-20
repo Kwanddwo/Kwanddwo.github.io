@@ -4,7 +4,6 @@ const pages = {};
 const links = {};
 
 // TODO: ADD ICON: should be either 'M' or 'ML' with a double shadow
-// TODO: Add navigation url (see mail project from CS50)
 
 function showPage(page_name) {
     if (page_name[0] == '?') {page_name = page_name.substring(6);}
@@ -22,7 +21,7 @@ function showPage(page_name) {
         link.className = link.id == page_name +'-link' ? 'nav-link-active' : 'nav-link';
     }
 
-    history.pushState({ page: page_name }, page_name, page_name == `?page=${page_name}`);
+    history.pushState({ page: page_name }, page_name, `?page=${page_name}`);
 }
 
 window.onpopstate = (ev) => {
