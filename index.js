@@ -3,7 +3,13 @@ let current_page = 'index';
 const pages = {};
 const links = {}
 
-// Add pagination animation
+// TODO: remove scrollbars please
+// TODO: ADD ICON: should be either 'M' or 'ML' with a double shadow
+// TODO: ADD WORK PAGE in index.html
+// TODO: change how the website looks on mobile, it looks awful! especially the paragraphs
+// TODO: Add pagination animation
+// TODO: Add navigation url (see mail project from CS50)
+
 function showPage(page_name) {
     if (page_name == current_page) {
         return;
