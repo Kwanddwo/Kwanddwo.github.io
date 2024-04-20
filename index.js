@@ -1,16 +1,16 @@
 const page_names = ['index', 'about', 'work', 'contact'];
-let current_page = 'index';
+let current_page = location.search ? location.search : 'index';
 const pages = {};
-const links = {}
+const links = {};
 
 // TODO: ADD ICON: should be either 'M' or 'ML' with a double shadow
-// TODO: Add pagination animation
 // TODO: Add navigation url (see mail project from CS50)
 
 function showPage(page_name) {
-    if (page_name == current_page) {
-        return;
-    }
+    if (page_name[0] == '?') {page_name = page_name.substring(6);}
+    if (page_name[0] == '/') {page_name = page_name.substring(1);}
+
+    if (page_name == current_page) {return;}
 
     current_page = page_name;
 
@@ -21,6 +21,13 @@ function showPage(page_name) {
     for (const link of Object.values(links)) {
         link.className = link.id == page_name +'-link' ? 'nav-link-active' : 'nav-link';
     }
+
+    history.pushState({ page: page_name }, page_name, page_name == `?page=${page_name}`);
+}
+
+window.onpopstate = (ev) => {
+    showPage(ev.state.page);
+    current_page = ev.state.page;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -37,4 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
             showPage(page_name);
         }
     }
+
+    showPage(current_page);
 })
