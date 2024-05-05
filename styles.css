@@ -203,7 +203,7 @@ section p {
 
 @media screen and (max-width: 768px) {
     .navbar {
-        font-size: 14px;
+        font-size: 12px;
     }
     section {
         padding: 30px; /* Reduce padding on smaller screens */
