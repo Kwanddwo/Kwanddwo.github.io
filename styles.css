@@ -202,8 +202,11 @@ section p {
 }
 
 @media screen and (max-width: 768px) {
+    .navbar {
+        font-size: 14px;
+    }
     section {
-        padding: 45px; /* Reduce padding on smaller screens */
+        padding: 30px; /* Reduce padding on smaller screens */
     }
     section h2 {
         font-size: 20px; /* Decrease heading font size on smaller screens */
